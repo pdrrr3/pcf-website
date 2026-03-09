@@ -50,16 +50,16 @@ export default function Home() {
           className="mx-auto mb-10 h-auto w-full max-w-[240px]"
         />
 
-        {/* Headline */}
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Discover your next precon opportunity in{" "}
-          <span className="text-[#0057C8]">Dubai.</span>
-        </h1>
-
         {/* Arabic subtitle */}
-        <p className="mt-3 text-lg text-gray-500 font-[var(--font-arabic)]" dir="rtl" lang="ar">
+        <p className="mb-3 text-lg text-gray-500 font-[var(--font-arabic)]" dir="rtl" lang="ar">
           اكتشف فرصتك القادمة في عقارات دبي قيد الإنشاء
         </p>
+
+        {/* Headline */}
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          Discover precon opportunities in{" "}
+          <span className="text-[#0057C8]">Dubai.</span>
+        </h1>
 
         {/* Divider */}
         <div className="mx-auto my-6 h-1 w-12 rounded-full bg-[#0057C8]" />
