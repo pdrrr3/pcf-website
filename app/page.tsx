@@ -52,9 +52,14 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Dubai Precon Sales Channel{" "}
-          <span className="text-[#0057C8]">for the GTA.</span>
+          Discover your next Dubai{" "}
+          <span className="text-[#0057C8]">precon opportunity.</span>
         </h1>
+
+        {/* Arabic subtitle */}
+        <p className="mt-3 text-lg text-gray-500" dir="rtl" lang="ar">
+          اكتشف فرصتك القادمة في عقارات دبي قيد الإنشاء
+        </p>
 
         {/* Divider */}
         <div className="mx-auto my-6 h-1 w-12 rounded-full bg-[#0057C8]" />
