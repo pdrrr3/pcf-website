@@ -61,8 +61,7 @@ export default function Home() {
 
         {/* Subtext */}
         <p className="mb-10 text-lg leading-relaxed text-gray-500">
-          We&apos;re building the easiest way to discover preconstruction real
-          estate opportunities. Be the first to know when we launch.
+          Dubai launch intel, structured — pricing, payment plans, floorplans. Join the PCF Partner List for early access.
         </p>
 
         {/* Signup form */}
