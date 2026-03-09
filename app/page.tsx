@@ -52,8 +52,8 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Early access{" "}
-          <span className="text-[#0057C8]">coming soon.</span>
+          Dubai Precon Sales Channel{" "}
+          <span className="text-[#0057C8]">for the GTA.</span>
         </h1>
 
         {/* Divider */}
