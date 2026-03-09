@@ -44,10 +44,10 @@ export default function Home() {
         <Image
           src="/logo-colour.png"
           alt="Precon Finder"
-          width={340}
+          width={240}
           height={60}
           priority
-          className="mx-auto mb-10 h-auto w-full max-w-[340px]"
+          className="mx-auto mb-10 h-auto w-full max-w-[240px]"
         />
 
         {/* Headline */}
