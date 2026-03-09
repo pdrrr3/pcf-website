@@ -1,6 +1,41 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setStatus("error");
+        setMessage(data.error ?? "Something went wrong. Please try again.");
+      } else {
+        setStatus("success");
+        setEmail("");
+        setMessage("You're on the list! We'll be in touch soon.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-white px-6 py-16">
       <div className="w-full max-w-lg text-center">
@@ -30,20 +65,34 @@ export default function Home() {
           estate opportunities. Be the first to know when we launch.
         </p>
 
-        {/* ════════════════════════════════════════════════
-            TODO: Replace this entire block with your
-            Flodesk newsletter signup embed code.
-            ════════════════════════════════════════════════ */}
-        <div className="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 px-6 py-8">
-          <span className="mb-3 inline-block rounded bg-blue-50 px-2 py-1 text-xs font-bold uppercase tracking-widest text-[#0057C8]">
-            Flodesk embed goes here
-          </span>
-          <p className="text-sm text-gray-400">
-            Paste your Flodesk newsletter signup embed code in place of this
-            block.
-          </p>
-        </div>
-        {/* ════════════════════════════════════════════════ */}
+        {/* Signup form */}
+        {status === "success" ? (
+          <div className="rounded-xl bg-green-50 px-6 py-6 text-green-700 font-medium">
+            {message}
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "loading"}
+              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#0057C8] focus:outline-none focus:ring-2 focus:ring-[#0057C8]/20 disabled:opacity-50"
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="rounded-lg bg-[#0057C8] px-6 py-3 font-semibold text-white transition hover:bg-[#0046a8] disabled:opacity-50"
+            >
+              {status === "loading" ? "Joining..." : "Notify Me"}
+            </button>
+          </form>
+        )}
+        {status === "error" && (
+          <p className="mt-2 text-sm text-red-500">{message}</p>
+        )}
 
         {/* Footer */}
         <p className="mt-12 text-xs text-gray-400">
