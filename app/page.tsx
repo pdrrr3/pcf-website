@@ -52,7 +52,7 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Something exciting is{" "}
+          Early access{" "}
           <span className="text-[#0057C8]">coming soon.</span>
         </h1>
 
