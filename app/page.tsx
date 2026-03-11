@@ -37,18 +37,10 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-white px-6 py-16">
-      <div className="w-full max-w-lg text-center">
+    <main className="flex min-h-screen flex-col items-center justify-between bg-white px-6 py-16">
 
-        {/* Logo */}
-        <Image
-          src="/logo-colour.png"
-          alt="Precon Finder"
-          width={180}
-          height={45}
-          priority
-          className="mx-auto mb-10 h-auto w-full max-w-[180px]"
-        />
+      {/* Main content */}
+      <div className="flex flex-1 flex-col items-center justify-center w-full max-w-lg text-center">
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
@@ -75,7 +67,7 @@ export default function Home() {
             {message}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row w-full">
             <input
               type="email"
               required
@@ -97,13 +89,22 @@ export default function Home() {
         {status === "error" && (
           <p className="mt-2 text-sm text-red-500">{message}</p>
         )}
+      </div>
 
-        {/* Footer */}
-        <p className="mt-12 text-xs text-gray-400">
+      {/* Footer */}
+      <footer className="mt-16 flex flex-col items-center gap-4">
+        <Image
+          src="/logo-colour.png"
+          alt="Precon Finder"
+          width={140}
+          height={35}
+          className="h-auto w-full max-w-[140px] opacity-70"
+        />
+        <p className="text-xs text-gray-400">
           &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &amp; Dubai
         </p>
+      </footer>
 
-      </div>
     </main>
   );
 }
