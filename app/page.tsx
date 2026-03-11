@@ -100,10 +100,7 @@ export default function Home() {
 
         {/* Footer */}
         <p className="mt-12 text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved.
-        </p>
-        <p className="mt-2 text-xs text-gray-400">
-          Toronto &amp; Dubai
+          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &amp; Dubai
         </p>
 
       </div>
