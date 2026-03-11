@@ -44,16 +44,16 @@ export default function Home() {
         <Image
           src="/logo-colour.png"
           alt="Precon Finder"
-          width={240}
-          height={60}
+          width={180}
+          height={45}
           priority
-          className="mx-auto mb-10 h-auto w-full max-w-[240px]"
+          className="mx-auto mb-10 h-auto w-full max-w-[180px]"
         />
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Discover precon opportunities in{" "}
-          <span className="text-[#0057C8]">Dubai.</span>
+          Discover precon opportunities{" "}
+          <span className="text-[#0057C8]">in Dubai.</span>
         </h1>
 
         {/* Arabic subtitle */}
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="mx-auto my-6 h-1 w-12 rounded-full bg-[#0057C8]" />
 
         {/* Subtext */}
-        <p className="mb-10 text-lg leading-relaxed text-gray-500">
+        <p className="mb-10 text-xl leading-relaxed text-gray-500">
           Dubai launch intel, structured — pricing, payment plans, floorplans. Join the PCF Partner List for early access.
         </p>
 
