@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Arabic subtitle */}
         <p className="mt-3 text-3xl text-gray-900 font-[var(--font-arabic)]" dir="rtl" lang="ar">
-          عقارات دبي قيد الإنشاء
+          اكتشف فرص العقارات على الخارطة في دبي.
         </p>
 
         {/* Divider */}
