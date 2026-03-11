@@ -102,6 +102,9 @@ export default function Home() {
         <p className="mt-12 text-xs text-gray-400">
           &copy; {new Date().getFullYear()} Precon Finder. All rights reserved.
         </p>
+        <p className="mt-2 text-xs text-gray-400">
+          Toronto &amp; Dubai
+        </p>
 
       </div>
     </main>
