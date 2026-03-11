@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Arabic subtitle */}
         <p className="mt-3 text-3xl text-gray-900 font-[var(--font-arabic)]" dir="rtl" lang="ar">
-          اكتشف فرص العقارات على الخارطة في دبي.
+          اكتشف فرص العقارات على الخارطة <span className="text-[#0057C8]">في دبي.</span>
         </p>
 
         {/* Divider */}
