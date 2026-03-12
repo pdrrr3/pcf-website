@@ -60,7 +60,7 @@ export default function Home() {
 
   const inputClass = (hasError?: string) =>
     [
-      "w-full rounded-xl border px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 bg-white",
+      "w-full rounded-lg border px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 bg-white",
       "transition-all duration-150",
       "focus:outline-none focus:border-[#005FC6]",
       "focus-visible:ring-2 focus-visible:ring-[#005FC6] focus-visible:ring-offset-2",
@@ -82,7 +82,7 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-[2.75rem] font-extrabold leading-[1.15] tracking-tight text-[#005FC6] sm:text-5xl">
-          Toronto &amp; Vancouver Precon Deals — Before They Go Public
+          Discover Your Next Precon Opportunity with Us
         </h1>
 
         {/* Divider */}
@@ -90,11 +90,11 @@ export default function Home() {
 
         {/* Subtext */}
         <p className="mb-10 text-lg leading-relaxed text-gray-600 max-w-lg mx-auto">
-          Pricing, payment plans, and floor plans for upcoming launches. Agents and investors get early access. Free.
+          Access precon intel with pricing, payment plans, and floorplans. Join our partner list to get notified when we go live.
         </p>
 
         {/* Form card */}
-        <div className="w-full max-w-lg mx-auto rounded-2xl border border-[#005FC6]/10 bg-white px-8 py-8 shadow-[0_4px_32px_rgba(0,95,198,0.08)]">
+        <div className="w-full max-w-lg mx-auto rounded-2xl border border-[#005FC6]/10 bg-white px-5 py-5 shadow-[0_4px_32px_rgba(0,95,198,0.08)]">
 
           {status === "success" ? (
             <div
@@ -203,7 +203,8 @@ export default function Home() {
                            hover:bg-[#004fa8] hover:shadow-[0_4px_16px_rgba(0,95,198,0.35)]
                            active:scale-[0.99]
                            disabled:cursor-not-allowed disabled:opacity-60
-                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005FC6] focus-visible:ring-offset-2"
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005FC6] focus-visible:ring-offset-2
+                           rounded-lg"
               >
                 {status === "loading" ? (
                   <span className="flex items-center justify-center gap-2">
