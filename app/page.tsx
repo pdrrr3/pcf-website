@@ -85,7 +85,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
+              className="whitespace-nowrap rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
             >
               {status === "loading" ? "Joining..." : "Join Partner List"}
             </button>
