@@ -219,10 +219,7 @@ export default function Home() {
                 )}
               </button>
 
-              {/* Trust microcopy */}
-              <p className="text-xs text-gray-400 text-center">
-                No spam. Unsubscribe anytime.
-              </p>
+
             </form>
           )}
         </div>
