@@ -24,6 +24,12 @@ export async function POST(req: NextRequest) {
   const data = await res.json();
 
   if (!res.ok) {
+    const isDuplicate =
+      typeof data.message === "string" &&
+      data.message.toLowerCase().includes("already");
+    if (isDuplicate) {
+      return NextResponse.json({ alreadySubscribed: true }, { status: 409 });
+    }
     return NextResponse.json(
       { error: data.message ?? "Something went wrong." },
       { status: res.status }

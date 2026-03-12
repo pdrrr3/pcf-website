@@ -43,7 +43,10 @@ export default function Home() {
         body: JSON.stringify({ name, email }),
       });
       const data = await res.json();
-      if (!res.ok) {
+      if (data.alreadySubscribed) {
+        setStatus("error");
+        setErrors({ form: "already_subscribed" });
+      } else if (!res.ok) {
         setStatus("error");
         setErrors({ form: data.error ?? "Something went wrong. Please try again." });
       } else {
@@ -116,8 +119,17 @@ export default function Home() {
 
               {/* Form-level API error */}
               {errors.form && (
-                <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                  {errors.form}
+                <p
+                  role="alert"
+                  className={`rounded-lg border px-4 py-3 text-sm ${
+                    errors.form === "already_subscribed"
+                      ? "border-[#005FC6]/20 bg-[#EFF5FF] text-[#005FC6]"
+                      : "border-red-200 bg-red-50 text-red-700"
+                  }`}
+                >
+                  {errors.form === "already_subscribed"
+                    ? "You're already on the list!"
+                    : errors.form}
                 </p>
               )}
 
