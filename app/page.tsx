@@ -63,7 +63,7 @@ export default function Home() {
             {message}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row w-full">
             <input
               type="text"
               required
@@ -71,26 +71,24 @@ export default function Home() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               disabled={status === "loading"}
-              className="rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
+              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
             />
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <input
-                type="email"
-                required
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={status === "loading"}
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
-              >
-                {status === "loading" ? "Joining..." : "Join Partner List"}
-              </button>
-            </div>
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "loading"}
+              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
+            >
+              {status === "loading" ? "Joining..." : "Join Partner List"}
+            </button>
           </form>
         )}
         {status === "error" && (
