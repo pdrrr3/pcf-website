@@ -63,29 +63,31 @@ export default function Home() {
             {message}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row w-full">
-            <input
-              type="text"
-              required
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              disabled={status === "loading"}
-              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
-            />
-            <input
-              type="email"
-              required
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={status === "loading"}
-              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
+            <div className="flex gap-3">
+              <input
+                type="text"
+                required
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                disabled={status === "loading"}
+                className="flex-1 min-w-0 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
+              />
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === "loading"}
+                className="flex-1 min-w-0 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "loading"}
-              className="whitespace-nowrap rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
+              className="w-full whitespace-nowrap rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50 sm:w-auto sm:self-center"
             >
               {status === "loading" ? "Joining..." : "Join Partner List"}
             </button>
