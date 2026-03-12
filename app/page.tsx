@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -17,7 +18,7 @@ export default function Home() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ name, email }),
       });
 
       const data = await res.json();
@@ -27,6 +28,7 @@ export default function Home() {
         setMessage(data.error ?? "Something went wrong. Please try again.");
       } else {
         setStatus("success");
+        setName("");
         setEmail("");
         setMessage("You're on the list! We'll be in touch soon.");
       }
@@ -40,25 +42,19 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between bg-white px-6 py-16">
 
       {/* Main content */}
-      <div className="flex flex-1 flex-col items-center justify-center w-full max-w-lg text-center">
+      <div className="flex flex-1 flex-col items-center justify-center w-full max-w-xl text-center">
 
         {/* Headline */}
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-          Discover precon opportunities{" "}
-          <span className="text-[#0057C8]">in Dubai.</span>
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-[#005FC6] sm:text-5xl">
+          Discover Your Next Precon Opportunity with Us
         </h1>
 
-        {/* Arabic subtitle */}
-        <p className="mt-3 text-3xl text-gray-900 font-[var(--font-arabic)]" dir="rtl" lang="ar">
-          اكتشف فرص العقارات على الخارطة <span className="text-[#0057C8]">في دبي.</span>
-        </p>
-
         {/* Divider */}
-        <div className="mx-auto my-6 h-1 w-12 rounded-full bg-[#0057C8]" />
+        <div className="mx-auto my-6 h-1 w-12 rounded-full bg-[#005FC6]" />
 
         {/* Subtext */}
         <p className="mb-10 text-xl leading-relaxed text-gray-500">
-          Dubai launch intel, structured — pricing, payment plans, floorplans. Join the PCF Partner List for early access.
+          Access precon intel with pricing, payment plans, and floorplans. Join our partner list to get notified when we go live.
         </p>
 
         {/* Signup form */}
@@ -67,23 +63,34 @@ export default function Home() {
             {message}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row w-full">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
             <input
-              type="email"
+              type="text"
               required
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               disabled={status === "loading"}
-              className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#0057C8] focus:outline-none focus:ring-2 focus:ring-[#0057C8]/20 disabled:opacity-50"
+              className="rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
             />
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="rounded-lg bg-[#0057C8] px-6 py-3 font-semibold text-white transition hover:bg-[#0046a8] disabled:opacity-50"
-            >
-              {status === "loading" ? "Joining..." : "Notify Me"}
-            </button>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={status === "loading"}
+                className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-[#005FC6] focus:outline-none focus:ring-2 focus:ring-[#005FC6]/20 disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="rounded-lg bg-[#005FC6] px-6 py-3 font-semibold text-white transition hover:bg-[#004fa8] disabled:opacity-50"
+              >
+                {status === "loading" ? "Joining..." : "Join Partner List"}
+              </button>
+            </div>
           </form>
         )}
         {status === "error" && (
@@ -98,10 +105,10 @@ export default function Home() {
           alt="Precon Finder"
           width={140}
           height={35}
-          className="h-auto w-full max-w-[140px] opacity-70"
+          className="h-auto w-full max-w-[140px]"
         />
         <p className="text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &amp; Dubai
+          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &middot; Vancouver &middot; Calgary
         </p>
       </footer>
 

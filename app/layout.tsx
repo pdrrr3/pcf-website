@@ -1,16 +1,37 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: [
+    {
+      path: "../public/fonts/inter-latin.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
   variable: "--font-inter",
   display: "swap",
 });
 
-const ibmPlexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+const ibmPlexArabic = localFont({
+  src: [
+    {
+      path: "../public/fonts/ibm-plex-arabic-400.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/ibm-plex-arabic-600.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/ibm-plex-arabic-700.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-arabic",
   display: "swap",
 });
