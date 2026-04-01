@@ -231,10 +231,28 @@ export default function Home() {
                 )}
               </button>
 
-
             </form>
           )}
         </div>
+
+        {/* Book a Demo card */}
+        <div className="mt-4 w-full max-w-lg mx-auto rounded-2xl border border-[#005FC6]/10 bg-white/60 px-6 py-4 shadow-[0_2px_16px_rgba(0,95,198,0.05)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm font-semibold text-gray-800">Are you an agent or brokerage?</p>
+            <p className="text-sm text-gray-500 mt-0.5">See how Precon Finder works for your team.</p>
+          </div>
+          <a
+            href="/demo"
+            className="shrink-0 rounded-lg border border-[#005FC6] px-5 py-2.5 text-sm font-semibold text-[#005FC6]
+                       transition-all duration-200
+                       hover:bg-[#005FC6] hover:text-white hover:shadow-[0_4px_16px_rgba(0,95,198,0.25)]
+                       active:scale-[0.98]
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005FC6] focus-visible:ring-offset-2"
+          >
+            Book a Demo
+          </a>
+        </div>
+
       </div>
 
       {/* Footer */}
