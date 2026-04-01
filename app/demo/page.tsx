@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const roles = ["Agent", "Brokerage", "Builder", "Other"] as const;
 
@@ -119,6 +120,17 @@ export default function DemoPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,#EFF5FF,#F7F9FF_55%,white)] px-6 py-16">
       <div className="max-w-lg w-full">
+        <div className="flex justify-center mb-8">
+          <a href="/">
+            <Image
+              src="/logo-colour.png"
+              alt="Precon Finder"
+              width={140}
+              height={35}
+              className="h-auto w-full max-w-[140px]"
+            />
+          </a>
+        </div>
         <div className="text-center mb-10">
           <h1 className="text-[2.75rem] font-extrabold leading-[1.15] tracking-tight text-[#005FC6] sm:text-5xl">
             Book a Demo
