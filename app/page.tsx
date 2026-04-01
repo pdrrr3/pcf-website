@@ -93,7 +93,7 @@ export default function Home() {
 
         {/* Subtext */}
         <p className="mb-10 text-lg leading-relaxed text-gray-600 max-w-lg mx-auto">
-          Purpose-built for GTA precon sales: launch intel, pricing, floorplans, client portals, compliance, tracking, and real-time updates.
+          Purpose-built for GTA precon: launch intel, pricing, floorplans, client portals, compliance, tracking, and real-time updates.
         </p>
 
         {/* Form card */}
