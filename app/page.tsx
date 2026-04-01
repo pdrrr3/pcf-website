@@ -85,7 +85,7 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-[2.75rem] font-extrabold leading-[1.15] tracking-tight text-[#005FC6] sm:text-5xl">
-          Level up your Precon ops
+          Master your Precon dealflow
         </h1>
 
         {/* Divider */}
@@ -93,7 +93,7 @@ export default function Home() {
 
         {/* Subtext */}
         <p className="mb-10 text-lg leading-relaxed text-gray-600 max-w-lg mx-auto">
-          Access precon intel with pricing, payment plans, and floorplans. Join our partner list to get notified when we go live.
+          Purpose-built for GTA precon sales: launch intel, pricing, floorplans, client portals, compliance, tracking, and real-time updates.
         </p>
 
         {/* Form card */}
@@ -265,7 +265,8 @@ export default function Home() {
           className="h-auto w-full max-w-[140px]"
         />
         <p className="text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &middot; Vancouver &middot; Calgary
+          &copy; {new Date().getFullYear()} Precon Finder. All rights reserved. &middot; Toronto &middot; Vancouver &middot; Calgary &middot;{" "}
+          <a href="/privacy" className="text-gray-400 underline-offset-2 hover:underline hover:text-[#005FC6]">Privacy</a>
         </p>
       </footer>
 
