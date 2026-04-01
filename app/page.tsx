@@ -85,7 +85,7 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mb-4 text-[2.75rem] font-extrabold leading-[1.15] tracking-tight text-[#005FC6] sm:text-5xl">
-          Level up your Precon game
+          Level up your Precon ops
         </h1>
 
         {/* Divider */}
