@@ -55,7 +55,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${ibmPlexArabic.variable}`}>
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EWSEEEC025"
+          src="https://www.googletagmanager.com/gtag/js?id=G-QHMKD4V50S"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -63,7 +63,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-EWSEEEC025');
+            gtag('config', 'G-QHMKD4V50S');
           `}
         </Script>
       </head>
